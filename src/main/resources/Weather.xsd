@@ -1,0 +1,12 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="Weather">
+		<xsd:sequence>
+			<xsd:element name="uuid" type="xsd:string"
+				minOccurs="1" maxOccurs="1" />
+			<xsd:element name="temp" type="xsd:decimal" minOccurs="1"
+				maxOccurs="1" />
+			<xsd:element name="location" type="xsd:string"
+				minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
