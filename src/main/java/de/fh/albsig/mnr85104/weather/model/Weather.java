@@ -14,6 +14,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 /**
  * <p>
  * Java-Klasse für Weather complex type.
@@ -65,7 +68,7 @@ public class Weather {
      *            allowed object is {@link String }
      * 
      */
-    public void setUuid(String value) {
+    public void setUuid(final String value) {
         this.uuid = value;
     }
 
@@ -86,7 +89,7 @@ public class Weather {
      *            allowed object is {@link BigDecimal }
      * 
      */
-    public void setTemp(BigDecimal value) {
+    public void setTemp(final BigDecimal value) {
         this.temp = value;
     }
 
@@ -107,8 +110,29 @@ public class Weather {
      *            allowed object is {@link String }
      * 
      */
-    public void setLocation(String value) {
+    public void setLocation(final String value) {
         this.location = value;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
+    public boolean equals(final Object obj) {
+        return EqualsBuilder.reflectionEquals(this, obj);
+
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
+    public int hashCode() {
+        return HashCodeBuilder.reflectionHashCode(this);
     }
 
 }

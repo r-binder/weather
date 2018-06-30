@@ -30,8 +30,9 @@ public class WeatherController {
      *            The location
      * @return {@link Weather}
      */
-    @RequestMapping(value = "/weather", produces = { MediaType.APPLICATION_XML_VALUE }, method = { RequestMethod.GET })
-    public Weather getPersonList(@RequestParam String loc) {
+    @RequestMapping(value = "/weather", produces = {
+            MediaType.APPLICATION_XML_VALUE }, method = { RequestMethod.GET })
+    public final Weather getPersonList(@RequestParam final String loc) {
         Validate.notBlank(loc);
         return weatherService.fetchWeather(loc);
     }

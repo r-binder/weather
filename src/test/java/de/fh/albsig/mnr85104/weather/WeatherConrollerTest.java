@@ -18,7 +18,8 @@ public class WeatherConrollerTest {
 
     @Test
     public void testAbout() {
-        String message = this.restTemplate.getForObject("/weather", String.class);
+        final String message = this.restTemplate.getForObject("/weather",
+                String.class);
         assertNotNull(message);
     }
 

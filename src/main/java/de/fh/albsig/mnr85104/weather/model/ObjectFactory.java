@@ -24,11 +24,12 @@ import javax.xml.bind.annotation.XmlRegistry;
 public class ObjectFactory {
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema
-     * derived classes for package: de.fh.albsig.mnr85104.weather
+     * Create a new ObjectFactory that can be used to create new instances of
+     * schema derived classes for package: de.fh.albsig.mnr85104.weather
      * 
      */
     public ObjectFactory() {
+
     }
 
     /**

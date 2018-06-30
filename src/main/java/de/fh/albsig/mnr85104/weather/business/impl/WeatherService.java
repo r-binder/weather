@@ -18,7 +18,11 @@ import de.fh.albsig.mnr85104.weather.model.Weather;
 @Service
 public class WeatherService implements IWeatherService {
 
-    private Random random;
+    private static final int THE_10 = 10;
+    /**
+     * Useing {@link Random} for random number generation.
+     */
+    private final Random random;
 
     /**
      * The Constructor.
@@ -32,13 +36,13 @@ public class WeatherService implements IWeatherService {
      * (non-Javadoc)
      * 
      * @see
-     * de.fh.albsig.mnr85104.weather.business.IWeatherService#fetchWeather(java.lang
-     * .String)
+     * de.fh.albsig.mnr85104.weather.business.IWeatherService#fetchWeather(java.
+     * lang .String)
      */
     @Override
-    public Weather fetchWeather(String loc) {
-        Weather w = new Weather();
-        w.setTemp(BigDecimal.valueOf(random.nextDouble() * 10));
+    public final Weather fetchWeather(final String loc) {
+        final Weather w = new Weather();
+        w.setTemp(BigDecimal.valueOf(random.nextDouble() * THE_10));
         w.setUuid(UUID.randomUUID().toString());
         w.setLocation(loc);
         return w;
